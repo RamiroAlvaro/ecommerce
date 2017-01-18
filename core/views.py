@@ -1,7 +1,10 @@
+from django.contrib.auth import get_user_model
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
 from .forms import ContactForm
+
+User = get_user_model()
 
 
 class IndexView(TemplateView):
@@ -21,6 +24,7 @@ def contact(request):
         'success': success,
     }
     return render(request, 'contact.html', context)
+
 
 
 
