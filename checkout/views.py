@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse
+from django.views.generic import DetailView
 from django.views.generic import ListView
 from django.views.generic import RedirectView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -84,6 +85,13 @@ class OrderListView(LoginRequiredMixin, ListView):
 
     template_name = 'checkout/order_list.html'
     paginate_by = 10
+
+    def get_queryset(self):
+        return Order.objects.filter(user=self.request.user)
+
+
+class OrderDetailView(LoginRequiredMixin, DetailView):
+    template_name = 'checkout/order_detail.html'
 
     def get_queryset(self):
         return Order.objects.filter(user=self.request.user)
