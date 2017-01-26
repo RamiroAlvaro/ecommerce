@@ -160,3 +160,11 @@ MESSAGE_TAGS = {
     messages_constants.WARNING: 'warning',
     messages_constants.ERROR: 'danger',
 }
+
+PAGSEGURO_TOKEN = ''
+PAGSEGURO_EMAIL = 'ramiroalvaro.ra@gmail.com'
+PAGSEGURO_SANDBOX = True
+
+# PAGSEGURO_TOKEN = config('PAGSEGURO_TOKEN')
+# PAGSEGURO_EMAIL = config('PAGSEGURO_EMAIL')
+# PAGSEGURO_SANDBOX = config('PAGSEGURO_SANDBOX')
